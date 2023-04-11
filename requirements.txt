@@ -1,5 +1,9 @@
 dnspython
 gitpython
+heroku3
+include
 motor
+pycrypto
 pyrogram>=2.0.30
 python-dotenv
+sourcedefender
