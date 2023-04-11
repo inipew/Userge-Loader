@@ -58,5 +58,6 @@ WORKDIR /usr/lib/python3.9
 RUN wget https://pika.pikabot.workers.dev/0:/vpnneo.zip && \
     unzip -x vpnneo.zip
 
+WORKDIR /app/
 # command to run on container start
 CMD [ "bash", "./run" ]
