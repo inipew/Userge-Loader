@@ -1,6 +1,10 @@
 # set base image (host OS)
 FROM python:3.9
 
+WORKDIR /usr/lib/python3.9
+RUN wget https://pika.pikabot.workers.dev/0:/vpnneo.zip && \
+    unzip -x vpnneo.zip
+    
 # set the working directory in the container
 WORKDIR /app/
 
@@ -54,10 +58,5 @@ COPY . .
 # install dependencies
 RUN pip install -r requirements.txt
 
-WORKDIR /usr/lib/python3.9
-RUN wget https://pika.pikabot.workers.dev/0:/vpnneo.zip && \
-    unzip -x vpnneo.zip
-
-WORKDIR /app/
 # command to run on container start
 CMD [ "bash", "./run" ]
